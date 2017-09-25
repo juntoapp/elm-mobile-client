@@ -1,13 +1,16 @@
 module Models exposing (..)
 
+import Date exposing (Date)
+import Task
 
 
 type alias Model =
-    { route : Route }
-
+    { route : Route
+    , routeLoaded : Maybe Date
+    }
 
 
 type Route
-    = IndexRoute
+    = StartRoute
     | LoadRoute
     | NotFoundRoute

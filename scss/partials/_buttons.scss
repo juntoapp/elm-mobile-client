@@ -1,0 +1,74 @@
+/**
+ *  Base settings for all buttons
+ *  .btn
+ */
+$button-font: 'Karla';
+$button-bg-color: blue;
+$button-hover-bg-color: blue;
+$button-text-color: #fff;
+$button-hover-text-color: #fff;
+$button-padding: 0.85rem 1.6rem 0.9125rem;
+$button-font-size: 1.125rem;
+$button-font-weight: 700;
+$button-border-radius: 0;
+$button-border: none;
+
+/**
+ *  Settings for secondary buttons
+ *  .btn-secondary
+ */
+$sec-button-padding: 0.2rem;
+$sec-button-text-color: red;
+$sec-button-hover-color: red;
+
+/**
+ *  Base style for all buttons
+ */
+.btn {
+  line-height: normal;
+  border: none;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  padding: $button-padding;
+  color: $button-text-color !important;
+  background-color: $button-bg-color;
+  letter-spacing: 2px;
+  font-size: $button-font-size;
+  font-family: $button-font;
+  font-weight: $button-font-weight;
+  border-radius: $button-border-radius;
+  border: $button-border;
+  transition: all 0.3s;
+
+  &:hover, &:focus {
+    background-color: $button-hover-bg-color;
+    color: $button-hover-text-color !important;
+  }
+}
+
+/**
+ *  Secondary buttons
+ */
+.btn-secondary {
+  @extend .btn;
+  background-color: transparent;
+  padding-left: $sec-button-padding;
+  padding-right: $sec-button-padding;
+  color: $sec-button-text-color;
+  background-repeat: repeat-x;
+
+  &:hover, &:focus {
+    background-color: transparent;
+    color: $sec-button-hover-color;
+    background-image: linear-gradient(#fff 50%, $sec-button-hover-color 50%);
+    background-position: 0 2.2rem;
+    background-size: 1px 3px;
+  }
+}
+
+.next-btn {
+  float: right;
+  margin-bottom: 4em;
+}

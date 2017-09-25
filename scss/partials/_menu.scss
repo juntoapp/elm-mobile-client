@@ -1,0 +1,23 @@
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0;
+
+
+    .menu__element {
+        display: inline;
+
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        & a {
+            border: 0;
+        }
+
+
+        &:not(:first-child):before {
+            content: "";
+            margin: 0 1.5em;
+            border-left: 1px get-color(grey, dark) solid;
+        }
+    }
+}

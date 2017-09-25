@@ -1,0 +1,51 @@
+////
+/// All color-related things.
+/// @group settings
+/// @author Gregor Albrecht
+////
+
+/// All base colors and variations.
+$colors: (
+  white: (
+    base: rgba(255, 255, 255, 1.0),
+  ),
+  black: (
+    base: rgba(10, 10, 10, 1.0),
+  ),
+  blue: (
+    base: #3F51B5,
+    dark: #1A237E,
+    light: #9FA8DA,
+  ),
+  grey: (
+    base: #f4f4f6,
+    dark: #bbb,
+  )
+);
+
+/// Get certain colors from global color map.
+/// @param {color} $color - main color to get
+/// @param {variation} $value [base] - variation of the color
+/// @example scss
+///   get-color(orange, base);
+@function get-color($color, $value: base) {
+    @return map-get(map-get($colors, $color), $value);
+}
+
+/// Function to lighten colors
+/// @param {color in rgba} $color - color to lighten
+/// @param {percentage} $percentage - percentage
+/// @example scss
+///   tint(blue, 10%);
+@function tint($color, $percentage) {
+  @return mix($color, white, (100% - $percentage));
+}
+
+/// Function to darken colors
+/// @param {color in rgba} $color - color to darken
+/// @param {percentage} $percentage - percentage
+/// @example scss
+///   shade(blue, 20%);
+@function shade($color, $percentage) {
+  @return mix($color, black, (100% - $percentage));
+}

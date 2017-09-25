@@ -1,0 +1,23 @@
+.content {
+    @include container;
+    @include span(100%);
+    padding: 0 1em;
+    margin-top: 2em;
+    .content__left-col {
+        @include span(66%);
+        padding-right: 2.5em;
+    }
+    .content__right-col {
+        padding-left: 2.5em;
+        border-left: 1px get-color(grey, dark) solid;
+        @include span(33%);
+        padding-bottom: 3em;
+    }
+
+    li {
+
+        line-height: 1.8em;
+        font-size: 1.25em;
+    }
+
+}

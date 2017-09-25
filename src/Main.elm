@@ -2,23 +2,26 @@ module Main exposing (..)
 
 import Html exposing (Html, div, text)
 import Html.Events exposing (onInput, onClick)
+import Navigation exposing (Location)
+import Date
 import Msgs
 import Routing
 import Models
-import View exposing (..)
-import Update exposing (..)
-import Navigation exposing (Location)
-
+import View
+import Update
+import Task
 
 
 initialModel : Models.Route -> Models.Model
 initialModel route =
-    { route = route }
+    { route = route
+    , routeLoaded = Nothing
+    }
+
 
 subscriptions : Models.Model -> Sub Msgs.Msg
 subscriptions model =
     Sub.none
-
 
 
 init : Location -> ( Models.Model, Cmd Msgs.Msg )
@@ -27,15 +30,14 @@ init location =
         currentRoute =
             Routing.parseLocation location
     in
-        ( initialModel currentRoute, Cmd.none )
-
+        ( initialModel currentRoute, Task.perform Msgs.SetDate Date.now )
 
 
 main : Program Never Models.Model Msgs.Msg
 main =
     Navigation.program Msgs.OnLocationChange
         { init = init
-        , view = view
-        , update = update
+        , view = View.view
+        , update = Update.update
         , subscriptions = subscriptions
         }

@@ -1,0 +1,48 @@
+$global-max-width: 50em;
+
+
+/* Remove dotted outline from all links */
+a {
+  outline: none;
+}
+
+/* Prevent site from breaking on tiny screens */
+body, header {
+  min-width: 320px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1em;
+}
+
+
+/* Background if screen is larger than content */
+html {
+  background-color: get-color(white, base);
+  font-size: 16px;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+
+a {
+  color: get-color(blue,base);
+  text-decoration: none;
+  border-bottom: 1px solid blue;
+
+
+  &:focus, &:hover {
+    color: get-color(blue,dark);
+  }
+}
+

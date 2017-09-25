@@ -1,0 +1,12 @@
+
+footer {
+    @include container;
+    @include span(100%);
+    padding: 1em;
+    margin-top: 3em;
+    border-top: 1px get-color(grey, dark) solid;
+
+    @media (min-width: 769px) {
+
+    }
+}
