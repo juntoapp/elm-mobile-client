@@ -5,7 +5,7 @@
     "description": "A sample Apache Cordova application that responds to the deviceready event.",
     "main": "index.js",
     "scripts": {
-        "build-elm": "echo \"BUILDING ELM\n\"; elm-make --yes src/Main.elm --output www/js/elm.js",
+        "build-elm": "elm-make --yes src/Main.elm --output www/js/elm.js",
         "watch-elm": "chokidar 'src/**/*.*' -c 'npm run build-elm --silent'",
         "build-css": "node-sass --include-path scss scss/main.scss   www/css/index.css",
         "watch-css": "chokidar 'scss/**/*.*' -c 'npm run build-css --silent'",

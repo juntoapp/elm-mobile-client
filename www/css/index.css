@@ -442,3 +442,35 @@ td {
 
 .rightalign {
   text-align: right; }
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start; }
+  .dashboard .dashboard__header {
+    background: red; }
+    .dashboard .dashboard__header .calendar__weekdays {
+      background: green;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      align-items: stretch; }
+      .dashboard .dashboard__header .calendar__weekdays .calendar__weekday {
+        min-height: 2em; }
+      .dashboard .dashboard__header .calendar__weekdays .calendar__weekday--today {
+        min-height: 2em;
+        color: white; }
+      .dashboard .dashboard__header .calendar__weekdays .calendar__weekday--past {
+        min-height: 2em;
+        color: #CCCCCC; }
+    .dashboard .dashboard__header .calendar__weekdays--title {
+      background: yellow;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      align-items: stretch; }
+      .dashboard .dashboard__header .calendar__weekdays--title .calendar__weekday--title {
+        min-height: 2em; }
