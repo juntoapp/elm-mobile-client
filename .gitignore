@@ -9,5 +9,3 @@ repl-temp-*
 node_modules
 npm-debug.log
 platforms
-
-www/js/elm.js
