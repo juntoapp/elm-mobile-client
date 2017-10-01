@@ -36,13 +36,13 @@ main {
 
 
 a {
-  color: get-color(blue,base);
+  // color: get-color(blue,base);
   text-decoration: none;
-  border-bottom: 1px solid blue;
-
+  color: #000;
 
   &:focus, &:hover {
-    color: get-color(blue,dark);
+    // color: get-color(blue,dark);
+    color: #000;
   }
 }
 

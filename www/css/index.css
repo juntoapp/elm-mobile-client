@@ -364,6 +364,86 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+/* BEGIN Light */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("./fonts/Light/OpenSans-Light.woff2?v=1.101") format("woff2"), url("./fonts/Light/OpenSans-Light.woff?v=1.101") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+
+/* END Light */
+/* BEGIN Light Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("./fonts/LightItalic/OpenSans-LightItalic.woff2?v=1.101") format("woff2"), url("./fonts/LightItalic/OpenSans-LightItalic.woff?v=1.101") format("woff");
+  font-weight: 300;
+  font-style: italic; }
+
+/* END Light Italic */
+/* BEGIN Regular */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("./fonts/Regular/OpenSans-Regular.woff2?v=1.101") format("woff2"), url("./fonts/Regular/OpenSans-Regular.woff?v=1.101") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+/* END Regular */
+/* BEGIN Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("./fonts/Italic/OpenSans-Italic.woff2?v=1.101") format("woff2"), url("./fonts/Italic/OpenSans-Italic.woff?v=1.101") format("woff");
+  font-weight: normal;
+  font-style: italic; }
+
+/* END Italic */
+/* BEGIN Semibold */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("./fonts/Semibold/OpenSans-Semibold.woff2?v=1.101") format("woff2"), url("./fonts/Semibold/OpenSans-Semibold.woff?v=1.101") format("woff");
+  font-weight: 600;
+  font-style: normal; }
+
+/* END Semibold */
+/* BEGIN Semibold Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("./fonts/SemiboldItalic/OpenSans-SemiboldItalic.woff2?v=1.101") format("woff2"), url("./fonts/SemiboldItalic/OpenSans-SemiboldItalic.woff?v=1.101") format("woff");
+  font-weight: 600;
+  font-style: italic; }
+
+/* END Semibold Italic */
+/* BEGIN Bold */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("./fonts/Bold/OpenSans-Bold.woff2?v=1.101") format("woff2"), url("./fonts/Bold/OpenSans-Bold.woff?v=1.101") format("woff");
+  font-weight: bold;
+  font-style: normal; }
+
+/* END Bold */
+/* BEGIN Bold Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("./fonts/BoldItalic/OpenSans-BoldItalic.woff2?v=1.101") format("woff2"), url("./fonts/BoldItalic/OpenSans-BoldItalic.woff?v=1.101") format("woff");
+  font-weight: bold;
+  font-style: italic; }
+
+/* END Bold Italic */
+/* BEGIN Extrabold */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("./fonts/ExtraBold/OpenSans-ExtraBold.woff2?v=1.101") format("woff2"), url("./fonts/ExtraBold/OpenSans-ExtraBold.woff?v=1.101") format("woff");
+  font-weight: 800;
+  font-style: normal; }
+
+/* END Extrabold */
+/* BEGIN Extrabold Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("./fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff2?v=1.101") format("woff2"), url("./fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff?v=1.101") format("woff");
+  font-weight: 800;
+  font-style: italic; }
+
+/* END Extrabold Italic */
 /* Remove dotted outline from all links */
 a {
   outline: none; }
@@ -391,11 +471,10 @@ main {
   flex: 1; }
 
 a {
-  color: #3F51B5;
   text-decoration: none;
-  border-bottom: 1px solid blue; }
+  color: #000; }
   a:focus, a:hover {
-    color: #1A237E; }
+    color: #000; }
 
 .menu {
   list-style: none;
@@ -449,28 +528,70 @@ td {
   flex-wrap: nowrap;
   justify-content: flex-start; }
   .dashboard .dashboard__header {
-    background: red; }
-    .dashboard .dashboard__header .calendar__weekdays {
-      background: green;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-evenly;
-      align-items: stretch; }
-      .dashboard .dashboard__header .calendar__weekdays .calendar__weekday {
-        min-height: 2em; }
-      .dashboard .dashboard__header .calendar__weekdays .calendar__weekday--today {
-        min-height: 2em;
+    background: #fff; }
+    .dashboard .dashboard__header .topHeadBar {
+      background: #FF5722; }
+      .dashboard .dashboard__header .topHeadBar a {
         color: white; }
-      .dashboard .dashboard__header .calendar__weekdays .calendar__weekday--past {
-        min-height: 2em;
-        color: #CCCCCC; }
-    .dashboard .dashboard__header .calendar__weekdays--title {
-      background: yellow;
+    .dashboard .dashboard__header .calendar__dayTitleBar {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      min-height: 1.5em;
+      background: #D8D8D8;
+      border-top: 1px #979797 solid;
+      border-bottom: 1px #979797 solid; }
+      .dashboard .dashboard__header .calendar__dayTitleBar .calendar__selectedDay {
+        display: flex;
+        align-items: center;
+        margin: 0 0.3em;
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-size: 0.7em;
+        text-transform: uppercase;
+        letter-spacing: 0.117em; }
+        .dashboard .dashboard__header .calendar__dayTitleBar .calendar__selectedDay:first-child {
+          margin-left: 1em; }
+    .dashboard .dashboard__header .calendar__weekdays {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
       justify-content: space-evenly;
       align-items: stretch; }
-      .dashboard .dashboard__header .calendar__weekdays--title .calendar__weekday--title {
-        min-height: 2em; }
+      .dashboard .dashboard__header .calendar__weekdays--title {
+        background: #FF5722; }
+      .dashboard .dashboard__header .calendar__weekdays .calendar__weekday {
+        min-height: 2.5em;
+        min-width: 2.5em;
+        flex: 1;
+        background: #F7F7F7;
+        /* start - vertical and horizantal center */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* end - vertical and horizantal center */
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-size: 1em; }
+        .dashboard .dashboard__header .calendar__weekdays .calendar__weekday--title {
+          font-family: Arial;
+          font-size: 1em;
+          color: #ffffff;
+          background: #FF5722; }
+        .dashboard .dashboard__header .calendar__weekdays .calendar__weekday--today,
+        .dashboard .dashboard__header .calendar__weekdays .calendar__weekday--today a {
+          background: #F7F7F7;
+          color: #FF5722; }
+        .dashboard .dashboard__header .calendar__weekdays .calendar__weekday--selected a {
+          background: #FF5722;
+          color: white;
+          width: 2em;
+          height: 2em;
+          border-radius: 5em;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+        .dashboard .dashboard__header .calendar__weekdays .calendar__weekday--past {
+          background: #D8D8D8; }

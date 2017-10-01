@@ -6,41 +6,104 @@
 
 
     .dashboard__header {
-        background: red;
+        background: #fff;
 
-        .calendar__weekdays {
-            background: green;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: space-evenly;
-            align-items: stretch;
-
-
-            .calendar__weekday {
-                min-height: 2em;
-            }
-
-            .calendar__weekday--today {
-                min-height: 2em;
+        .topHeadBar {
+            background: #FF5722;
+            a {
                 color: white;
-            }
-            .calendar__weekday--past {
-                min-height: 2em;
-                color: #CCCCCC;
             }
         }
 
-        .calendar__weekdays--title {
-            background: yellow;
+        .calendar__dayTitleBar {
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: stretch;
+
+            min-height: 1.5em;
+            background: #D8D8D8;
+            border-top: 1px #979797 solid;
+            border-bottom: 1px #979797 solid;
+
+            .calendar__selectedDay {
+
+                display: flex;
+                align-items: center;
+                margin: 0 0.3em;
+
+                font-family: 'Open Sans';
+                font-weight: 300;
+                font-size: 0.7em;
+                text-transform: uppercase;
+                letter-spacing: 0.117em;
+
+                &:first-child {
+                    margin-left: 1em;
+                }
+            }
+        }
+
+
+
+        .calendar__weekdays {
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
             justify-content: space-evenly;
             align-items: stretch;
 
-            .calendar__weekday--title {
-                min-height: 2em;
+
+            &--title {
+                background: #FF5722;
+            }
+
+            .calendar__weekday {
+                min-height: 2.5em;
+                min-width: 2.5em;
+                flex: 1;
+
+                background: #F7F7F7;
+
+                /* start - vertical and horizantal center */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* end - vertical and horizantal center */
+                font-family: 'Open Sans';
+                font-weight: 300;
+                font-size: 1em;
+
+                &--title {
+                    font-family: Arial;
+                    font-size: 1em;
+                    color: #ffffff;
+                    background: #FF5722;
+                }
+
+                &--today,
+                &--today a {
+                    background: #F7F7F7;
+                    color: #FF5722;
+                }
+
+                &--selected a {
+                    background: #FF5722;
+                    color: white;
+                    width: 2em;
+                    height: 2em;
+                    border-radius: 5em;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                &--past {
+                    background: #D8D8D8;
+                }
             }
         }
     }

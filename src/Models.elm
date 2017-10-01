@@ -10,7 +10,16 @@ type alias Model =
     }
 
 
+initialModel : Route -> Model
+initialModel route =
+    { route = route
+    , routeLoaded = Nothing
+    }
+
+
 type Route
     = StartRoute
+    | DashboardRoute
+    | DashboardDateRoute String
     | LoadRoute
     | NotFoundRoute

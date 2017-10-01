@@ -12,13 +12,6 @@ import Update
 import Task
 
 
-initialModel : Models.Route -> Models.Model
-initialModel route =
-    { route = route
-    , routeLoaded = Nothing
-    }
-
-
 subscriptions : Models.Model -> Sub Msgs.Msg
 subscriptions model =
     Sub.none
@@ -30,7 +23,7 @@ init location =
         currentRoute =
             Routing.parseLocation location
     in
-        ( initialModel currentRoute, Task.perform Msgs.SetDate Date.now )
+        ( Models.initialModel currentRoute, Task.perform Msgs.SetDate Date.now )
 
 
 main : Program Never Models.Model Msgs.Msg

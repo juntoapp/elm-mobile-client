@@ -8,7 +8,8 @@ import UrlParser exposing (..)
 matchers : Parser (Models.Route -> a) a
 matchers =
     oneOf
-        [ map Models.StartRoute top
+        [ map Models.DashboardRoute top
+        , map Models.DashboardDateRoute (s "dashboard" </> string)
         , map Models.LoadRoute (s "load")
         ]
 
