@@ -45,4 +45,5 @@ viewWeekDay txt =
     [ width (pct 100)
     , textAlign center
     , color Theme.theme.colors.primary
+    , fontFamilies ["Karla"]
     ]] [ text txt ]

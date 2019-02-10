@@ -26,8 +26,7 @@ layout page =
         [ margin (px 0)
         , padding (px 0)
         , border2 (px 1) solid
-        , width (px 600)
-        , height (px 700)
+        , maxWidth (px 1200)
         ]
     ]
     [ page ]

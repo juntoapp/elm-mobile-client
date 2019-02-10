@@ -1,0 +1,19 @@
+{
+  "name": "junto-elm-client",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch",
+    "dev": "webpack-dev-server --mode production --port 3000",
+    "errors": "webpack --mode development --display-error-details"
+  },
+  "dependencies": {
+    "elm-webpack-loader": "^5.0.0",
+    "file-loader": "1.1.10",
+    "loader-utils": "1.1.0",
+    "webpack": "4.0.1",
+    "webpack-cli": "2.0.9",
+    "webpack-dev-server": "3.0.0"
+  }
+}
