@@ -1,28 +1,48 @@
 module Dashboard.View exposing (..)
 
-import Date exposing (Date)
-import Html exposing (..)
-import Html.Attributes exposing (class, value, href)
-import Msgs
-import Models
-import Dashboard.Calendar
-import Dashboard.DayTitleBar
+import Time
+import Css exposing (..)
+import Html.Styled exposing (..)
+import Html.Styled.Attributes exposing (css, href, src)
+
+import Theme
+import Message exposing (Msg)
+import Model exposing (Model)
+-- import Dashboard.Calendar
+-- import Dashboard.DayTitleBar
 
 
-view : Models.Model -> String -> Html Msgs.Msg
-view model selectedDate =
-    div [ class "dashboard" ]
-        [ div
-            [ class "dashboard__header" ]
-            [ topHeadBar
-            , Dashboard.Calendar.view model (Date.fromString selectedDate)
-            , Dashboard.DayTitleBar.view model (Date.fromString selectedDate)
-            ]
+view : Model -> Html Msg
+view model =
+    div [ css 
+            [ displayFlex
+            , flexDirection column
+            , flexWrap noWrap
+            , justifyContent flexStart
+            ] 
+        ]
+        [ div   [ css 
+                    [ displayFlex
+                    , flexDirection row
+                    , flexWrap noWrap
+                    , justifyContent center
+                    ] 
+                ]
+                [ viewWeekDay "M"
+                , viewWeekDay "T" 
+                , viewWeekDay "W" 
+                , viewWeekDay "T" 
+                , viewWeekDay "F" 
+                , viewWeekDay "S" 
+                , viewWeekDay "S" 
+                ]
         ]
 
 
-topHeadBar : Html Msgs.Msg
-topHeadBar =
-    div [ class "topHeadBar" ]
-        [ a [ href (Dashboard.Calendar.daySelectionPath Nothing) ] [ text "today" ]
-        ]
+viewWeekDay : String -> Html Msg
+viewWeekDay txt =
+    div [ css 
+    [ width (pct 100)
+    , textAlign center
+    , color Theme.theme.colors.primary
+    ]] [ text txt ]

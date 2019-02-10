@@ -1,36 +1,21 @@
-module Main exposing (..)
+import Browser
+import Html.Styled exposing (toUnstyled)
 
-import Html exposing (Html, div, text)
-import Html.Events exposing (onInput, onClick)
-import Navigation exposing (Location)
-import Date
-import Msgs
-import Routing
-import Models
-import View
-import Update
-import Task
+import Model exposing (Model)
+import Message exposing (Msg)
+import View exposing (view)
 
 
-subscriptions : Models.Model -> Sub Msgs.Msg
-subscriptions model =
-    Sub.none
+
+update : Msg -> Model -> Model
+update msg model =
+  model
 
 
-init : Location -> ( Models.Model, Cmd Msgs.Msg )
-init location =
-    let
-        currentRoute =
-            Routing.parseLocation location
-    in
-        ( Models.initialModel currentRoute, Task.perform Msgs.SetDate Date.now )
 
-
-main : Program Never Models.Model Msgs.Msg
 main =
-    Navigation.program Msgs.OnLocationChange
-        { init = init
-        , view = View.view
-        , update = Update.update
-        , subscriptions = subscriptions
-        }
+  Browser.sandbox 
+  { init = Model.initialModel
+  , update = update
+  , view = view >> toUnstyled 
+  }

@@ -1,31 +1,47 @@
-module View exposing (..)
+module View exposing (view)
 
-import Html exposing (Html, div, text)
-import Models exposing (Model)
-import Msgs exposing (Msg)
+import Css exposing (..)
+import Html.Styled exposing (..)
+import Html.Styled.Attributes exposing (css, href, src)
+
+import Model exposing (Model)
+import Message exposing (Msg)
+
 import Dashboard.View
 
 
-view : Model -> Html Msg
+view : Model.Model -> Html Msg
 view model =
-    div []
-        [ page model ]
+   div [] [ 
+       layout (Dashboard.View.view model)
+    ]
 
 
-page : Model -> Html Msg
-page model =
-    case model.route of
-        Models.DashboardRoute ->
-            Dashboard.View.view model ""
-
-        Models.DashboardDateRoute selectedDate ->
-            Dashboard.View.view model selectedDate
-
-        _ ->
-            notFoundView model
 
 
-notFoundView : Model -> Html Msg
-notFoundView model =
-    div []
-        [ text "404" ]
+layout : Html Msg -> Html Msg
+layout page = 
+    div 
+    [ css 
+        [ margin (px 0)
+        , padding (px 0)
+        , border2 (px 1) solid
+        , width (px 600)
+        , height (px 700)
+        ]
+    ]
+    [ page ]
+
+
+-- layout : Html Msg -> Html Msg
+-- layout page = 
+--     div 
+--     [ css 
+--         [ margin (px 12)
+--         , backgroundColor theme.primary
+--         , color (rgb 250 250 250)
+--         , hover
+--             [ backgroundColor theme.secondary
+--             , textDecoration underline
+--             ]  ]]
+--         [ page ]
